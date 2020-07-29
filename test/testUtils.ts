@@ -17,6 +17,9 @@ const Providers = ({ children }) => {
 const customRender = (ui, options = {}) =>
   render(ui, { wrapper: Providers, ...options })
 
+export const wait = (amount = 0) =>
+  new Promise((resolve) => setTimeout(resolve, amount))
+
 // re-export everything
 export * from '@testing-library/react'
 

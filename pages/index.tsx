@@ -8,8 +8,12 @@ import {
 import { initializeApollo } from '../lib/apollo'
 
 export const Home = (): JSX.Element => {
-  const { data } = useGetViewerQuery()
-  const { viewer } = data!
+  const { data, loading, error } = useGetViewerQuery()
+
+  const handleClick = () => window.alert('With typescript and Jest')
+
+  if (loading) return <div>loading...</div>
+  if (error) return <div>{error.message}</div>
   return (
     <div className="container">
       <Head>
@@ -18,11 +22,13 @@ export const Home = (): JSX.Element => {
       </Head>
 
       <div>
-        You're signed in as {viewer.name} and you're {viewer.status} go to the{' '}
+        You're signed in as {data?.viewer.name} and you're {data?.viewer.status}{' '}
+        go to the{' '}
         <Link href="/about">
           <a>about</a>
         </Link>{' '}
         page.
+        <button onClick={handleClick}>Test Button</button>
       </div>
     </div>
   )
