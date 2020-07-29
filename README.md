@@ -42,3 +42,11 @@ npm run dev
 yarn
 yarn dev
 ```
+
+## Run tests
+
+```bash
+yarn test
+# or watching
+yarn test --watch
+```
