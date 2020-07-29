@@ -1,0 +1,7 @@
+query getViewer {
+  viewer {
+    id
+    name
+    status
+  }
+}

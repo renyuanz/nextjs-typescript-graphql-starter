@@ -1,0 +1,17 @@
+schema: ./lib/type-defs.graphql
+documents: queries/**/*.graphql
+generates:
+  lib/generated/resolvers.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+  queries/generated/graphql.tsx:
+    config:
+      withHooks: true
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+  queries/generated/modules.d.ts:
+    plugins:
+      - typescript-graphql-files-modules
