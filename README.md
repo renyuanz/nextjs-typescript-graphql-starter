@@ -14,9 +14,15 @@ Bootstrap a developer-friendly NextJS app configured with:
 
 Deploy the example using [Vercel](https://vercel.com):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/renyuanz/nextjs-graphql-ts-codegen-boilerplate)
 
 ## How to use
+
+### Use this template
+
+Click the "green" button on the right
+
+![Use this template](./Use-this-template.png)
 
 ### Download manually
 
