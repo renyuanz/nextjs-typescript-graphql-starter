@@ -1,5 +1,5 @@
 {
-  "schemaPath": "./lib/type-defs.graphql",
+  "schemaPath": "./lib/*.graphql",
   "extensions": {
     "endpoints": {
       "dev": "http://localhost:1337/graphql"

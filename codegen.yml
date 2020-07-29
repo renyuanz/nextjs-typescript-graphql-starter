@@ -1,4 +1,4 @@
-schema: ./lib/type-defs.graphql
+schema: ./lib/types/*.graphql
 documents: queries/**/*.graphql
 generates:
   lib/generated/resolvers.ts:
