@@ -1,6 +1,6 @@
 {
-  "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
+  "name": "nextjs-graphql-ts-codegen-boilerplate",
+  "author": "@renyuanz",
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
