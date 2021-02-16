@@ -1,6 +1,10 @@
 import Link from 'next/link'
 
-import { useGetViewerQuery } from '../queries/generated/graphql'
+import { initializeApollo } from '../lib/apollo'
+import {
+  useGetViewerQuery,
+  GetViewerDocument,
+} from '../queries/generated/graphql'
 
 export default function About(): JSX.Element {
   const { data, loading, error } = useGetViewerQuery()
@@ -19,4 +23,18 @@ export default function About(): JSX.Element {
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const apolloClient = initializeApollo()
+
+  await apolloClient.query({
+    query: GetViewerDocument,
+  })
+
+  return {
+    props: {
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  }
 }
