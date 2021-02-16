@@ -1,5 +1,7 @@
 # NextJS Typescript Boilerplate
 
+Live demo: https://nextjs-typescript-graphql-starter.vercel.app
+
 Bootstrap a developer-friendly NextJS app configured with:
 
 - [Typescript](https://www.typescriptlang.org/)
@@ -14,7 +16,7 @@ Bootstrap a developer-friendly NextJS app configured with:
 
 Deploy the example using [Vercel](https://vercel.com):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/renyuanz/nextjs-graphql-ts-codegen-boilerplate)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/renyuanz/nextjs-typescript-graphql-starter)
 
 ## How to use
 
