@@ -1,6 +1,9 @@
 const path = require('path')
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+})
 
-module.exports = {
+module.exports = withBundleAnalyzer({
   webpack(config, options) {
     config.module.rules.push({
       test: /\.(graphql|gql)$/,
@@ -15,4 +18,4 @@ module.exports = {
   env: {
     ROOT: __dirname,
   },
-}
+})
