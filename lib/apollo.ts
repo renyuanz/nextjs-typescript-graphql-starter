@@ -5,6 +5,8 @@ import {
   InMemoryCache,
   NormalizedCacheObject,
 } from '@apollo/client'
+import { SchemaLink } from '@apollo/client/link/schema'
+import { HttpLink } from '@apollo/client/link/http'
 
 let apolloClient: ApolloClient<NormalizedCacheObject> | undefined
 
@@ -15,11 +17,9 @@ export type ResolverContext = {
 
 function createIsomorphLink(context: ResolverContext = {}) {
   if (typeof window === 'undefined') {
-    const { SchemaLink } = require('apollo-link-schema')
     const { schema } = require('./schema')
     return new SchemaLink({ schema, context })
   } else {
-    const { HttpLink } = require('apollo-link-http')
     return new HttpLink({
       uri: '/api/graphql',
       credentials: 'same-origin',
@@ -40,7 +40,7 @@ export function initializeApollo(
   // Pages with Next.js data fetching methods, like `getStaticProps`, can send
   // a custom context which will be used by `SchemaLink` to server render pages
   context?: ResolverContext
-) {
+): ApolloClient<NormalizedCacheObject> {
   const _apolloClient = apolloClient ?? createApolloClient(context)
 
   // If your page has Next.js data fetching methods that use Apollo Client, the initial state
@@ -56,7 +56,9 @@ export function initializeApollo(
   return _apolloClient
 }
 
-export function useApollo(initialState: any) {
+export function useApollo(
+  initialState: unknown
+): ApolloClient<NormalizedCacheObject> {
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }

@@ -22,8 +22,8 @@ export const Home = (): JSX.Element => {
       </Head>
 
       <div>
-        You're signed in as {data?.viewer.name} and you're {data?.viewer.status}{' '}
-        go to the{' '}
+        You&apos;re signed in as {data?.viewer.name} and you&apos;re{' '}
+        {data?.viewer.status} go to the{' '}
         <Link href="/about">
           <a>about</a>
         </Link>{' '}
